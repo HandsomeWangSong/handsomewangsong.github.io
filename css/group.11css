@@ -145,4 +145,11 @@ svg {
     // make the alignment just like img from bootstrap's reboot.scss
     vertical-align: middle;
 }
+.video-card {
+    display: flex;
+}
 
+.video-info {
+    flex: 1;
+    padding: 10px;
+}
