@@ -1,5 +1,5 @@
-name: 肖航课题组  Xiao Research Group
-url: https://xiaohang007.github.io/
+name: WANG Song's Website
+url: https://handsomewangsong.github.io/
 
 exclude: [bibble, README.md, Makefile, screenshot.png]
 
@@ -34,9 +34,10 @@ collections:
 
 # Navigation bar links.
 navigation:
-  - title: zzz Home
+  - title: Home
     link: /
   - title: 科研项目 Research
     link: /research.html
   - title: 论文 Publications
     link: /publications.html
+
