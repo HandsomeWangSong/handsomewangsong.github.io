@@ -37,7 +37,7 @@
               content: "";
               position: absolute;
               z-index: -1;
-              top: 20%;
+              top: 60%;
               left: -0.1em;
               right: -0.1em;
               bottom: 0;
@@ -54,6 +54,53 @@
               height: 100%;
               overflow: hidden;
             }
+            #nav {
+                position: relative;
+                border: none;
+                border-radius: 10em;
+                display: flex;
+                list-style: none;
+                background: #f5f5f5;
+                box-shadow: 20px 40px 40px #00000033;
+                padding: 10px;
+            }
+            #nav li a {
+                position: relative;
+                padding: 15px 50px;
+                font:400 24px '优设标题黑';
+                border:none;
+                outline: none;
+                color: rgb(70,100,180);
+                display: inline-block;
+                text-decoration: none;
+                z-index: 3;
+            }
+
+            .slide1,
+            .slide2 {
+                position: absolute;
+                display: inline-block;
+                height: 60px;
+                border-radius: 10em;
+                transition: all 0.6s cubic-bezier(0.23,1,0.32,1.05);
+            }
+
+            .slide1 {
+                background-color: rgb(170,190,255,0.5);
+                z-index: 2;
+            }
+
+            .slide2 {
+                opacity: 0;
+                background-color: rgba(170,190,255,0.5);
+                z-index: 1;
+                box-shadow: 0 0 20px #ffffffaa inset;
+
+            }
+
+            .squeeze{
+                transform: scale(0.9);
+            }
           </style>
     </head>
     <body>
@@ -62,12 +109,8 @@
             <div class="header d-flex
                         flex-column
                         flex-md-row justify-content-md-between">
-<!--                <a href="{{ site.base }}/" class="">-->
-<!--                    <img src="{{ site.base }}/img/logo.png" -->
-<!--                         srcset="{{ site.base }}/img/logo@2x.png 2x"-->
-<!--                         alt="Awesome" id="logo">-->
-<!--                </a>-->
-                <ul class="nav nav-pills justify-content-center">
+
+                <ul id="nav">
 
                     {% assign shorturl = page.url | replace:'.html','' | replace:'index','' %}
                     {% for item in site.navigation %}
@@ -75,15 +118,17 @@
                         {% assign itemshorturl = item.link | replace:'.html','' %}
 
                         {% assign maybe-active = '' %}
-                        {% if item.title == 'Research' and page.layout == 'project' %}
+                        {% if item.title == 'Rest'  %}
                             {% assign maybe-active = 'active' %}
                         {% endif %}
                         {% if itemshorturl == shorturl or is-research %}
                             {% assign maybe-active = 'active' %}
                         {% endif %}
 
-                        <li class="nav-item">
-                            <a style="color:#3b8d68;font-weight:500; font-size:2.2em"
+                        <li class="slide1"></li>
+                        <li class="slide2"></li>
+                        <li>
+                            <a style="color: rgba(4,107,56,0.78);font-weight:500; font-size:2.2em"
                                href="{{ site.base }}{{ item.link }}" class="main">
                                 {{ item.title }}
                             </a>
@@ -91,7 +136,6 @@
                         </li>
 
                     {% endfor %}
-
                 </ul>
             </div>
 
@@ -108,18 +152,6 @@
 
             {{ content }}
 
-<!--            <div class="footer">-->
-<!--                <p>-->
-<!--                    <a href="https://www.ln.edu.hk/sis">跨学科学院 School of Interdisciplinary Studies</a>-->
-<!--                    - -->
-<!--                    <a href="https://www.ln.edu.hk/chs">岭南大学 </a>-->
-<!--                    <a href="https://www.ln.edu.hk/"> Lingnan University</a>-->
-<!--                    - -->
-<!--                    <a href = "mailto: hangxiao@ln.edu.hk">hangxiao@ln.edu.hk</a>-->
-<!--                </p>-->
-
-
-<!--            </div>-->
 
         </div> <!-- /container -->
 
@@ -127,4 +159,24 @@
         <script type="text/javascript"
                 src="{{ site.base }}/js/srcset-polyfill.js"></script>
     </body>
+    <script>
+        $("#nav a").on("click",function (){
+            var position=$(this).parent().position();
+            var width =$(this).parent().width();
+            $("#nav .slide1").css({ opacity:1,left: +position.left,width:width});
+        });
+        $("#nav a").on("mouseover",function (){
+            var position=$(this).parent().position();
+            var width =$(this).parent().width();
+            $("#nav .slide2").css({ opacity:1,left: +position.left,width:width}).addClass("squeeze");
+        });
+        $("#nav a").on("mouseout",function (){
+            $("#nav .slide2").css({opacity:0}).removeClass("squeeze");
+        });
+        var currentWidth =$("#nav li:nth-of-type(3) a").parent("li").width();
+        var current= $("li:nth-of-type(3) a").position();
+        $("#van .slide1").css({left:+current.left,width:currentWidth});
+
+    </script>
+
 </html>
