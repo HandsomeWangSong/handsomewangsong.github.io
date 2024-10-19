@@ -10,12 +10,12 @@
         <link rel="shortcut icon" href="favicon.ico" />
         <body background-color="#121314">
         <style>
-             body {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 100vh;
-                background-size: cover;
+            body {
+              font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+              font-size: calc(10px + 0.33vw);
+              -webkit-font-smoothing: antialiased;
+              padding: 5vh 10vw;
+              color: #ffffff;
             }
             h1 {
               font-size: 4.5em;
@@ -67,7 +67,7 @@
             #nav li a {
                 position: relative;
                 padding: 15px 50px;
-                font:400 24px '优设标题黑';
+                font:500 24px '优设标题黑';
                 border:none;
                 outline: none;
                 color: rgb(70,100,180);
@@ -103,12 +103,12 @@
             }
           </style>
     </head>
-   <body>
-{#        <div class="container">#}
-{#            <!-- This is a bit nasty, but it basically says be a column first, and on larger screens be a spaced out row -->#}
-{#            <div class="header d-flex#}
-{#                        flex-column#}
-{#                        flex-md-row justify-content-md-between">#}
+    <body>
+        <div class="container">
+            <!-- This is a bit nasty, but it basically says be a column first, and on larger screens be a spaced out row -->
+            <div class="header d-flex
+                        flex-column
+                        flex-md-row justify-content-md-between">
 
                 <ul id="nav">
 
@@ -135,23 +135,23 @@
 
                     {% endfor %}
                 </ul>
-{#            </div>#}
-{##}
-{#            {% if page.image %}#}
-{#                <img src="{{ page.image }}"#}
-{#                     alt="{{ page.title }}"#}
-{#                     style="max-width: 600px"#}
-{#                     class="img-fluid mx-auto d-block mb-4"/>#}
-{#            {% endif %}#}
-{##}
-{#            {% if page.notitle != true %}#}
-{#                <h1>{{ page.title }}</h1>#}
-{#            {% endif %}#}
-{##}
-{#            {{ content }}#}
-{##}
-{##}
-{#        </div> <!-- /container -->#}
+            </div>
+
+            {% if page.image %}
+                <img src="{{ page.image }}"
+                     alt="{{ page.title }}"
+                     style="max-width: 600px"
+                     class="img-fluid mx-auto d-block mb-4"/>
+            {% endif %}
+
+            {% if page.notitle != true %}
+                <h1>{{ page.title }}</h1>
+            {% endif %}
+
+            {{ content }}
+
+
+        </div> <!-- /container -->
 
         <!-- Support retina images. -->
         <script type="text/javascript"
@@ -173,7 +173,7 @@
         });
         var currentWidth =$("#nav li:nth-of-type(3) a").parent("li").width();
         var current= $("li:nth-of-type(3) a").position();
-        $("#nav .slide1").css({left:+current.left,width:currentWidth});
+        $("#nav .slide1").css({left: +current.left,width: currentWidth });
 
     </script>
 
