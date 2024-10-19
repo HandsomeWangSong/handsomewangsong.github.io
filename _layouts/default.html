@@ -116,19 +116,19 @@
                         {% assign itemshorturl = item.link | replace:'.html','' %}
 
                         {% assign maybe-active = '' %}
-                        {% if item.title == 'Research' and page.layout == 'project' %}
+                        {% if item.title == 'Rest' and page.layout == 'project' %}
                             {% assign maybe-active = 'active' %}
                         {% endif %}
                         {% if itemshorturl == shorturl or is-research %}
                             {% assign maybe-active = 'active' %}
                         {% endif %}
 
-<!--                         <li class="nav-item"> -->
+                      <li> 
                             <a class="nav-link {{ maybe-active }}"
                                href="{{ site.base }}{{ item.link }}">
                                 {{ item.title }}
                             </a>
-<!--                         </li> -->
+                       </li> 
 
                     {% endfor %}
 
