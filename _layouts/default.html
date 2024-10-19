@@ -104,20 +104,16 @@
             }
           </style>
     </head>
-    <body>
-      
-                <ul id="nav">
-
-                
+    <body>     
+         <ul id="nav">
                         <li><a href="../index.html">Home</a></li>
                         <li><a href="../research.html">Rest</a></li>
-                        <li><a href="../publications.html">Publications</a></li>
-                   
-                </ul>
+                        <li><a href="../publications.html">Publications</a></li>        
+         </ul>
             
     </body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-   <script>
+     <script>
         $("#nav a").on("click",function (){
             var position=$(this).parent().position();
             var width =$(this).parent().width();
@@ -136,5 +132,4 @@
         $("#nav .slide1").css({ left: +current.left, width : currentWidth });
 
     </script>
-
 </html>
