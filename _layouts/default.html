@@ -160,10 +160,13 @@
     </body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
-        $("#nav a").on("click", function() {
+       $("#nav a").on("click", function() {
             var position = $(this).parent().position();
             var width = $(this).parent().width();
+            $("#nav .slide2").css({ opacity: 0 }).removeClass("squeeze");
             $("#nav .slide1").css({ opacity: 1, left: position.left, width: width });
+            $("#nav a").removeClass('active');
+            $(this).addClass('active');
         });
     
         $("#nav a").on("mouseover", function() {
