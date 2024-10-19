@@ -36,7 +36,7 @@ collections:
 navigation:
   - title: Home
     link: /
-  - title:  Research
+  - title: Rest
     link: /research.html
   - title:  Publications
     link: /publications.html
