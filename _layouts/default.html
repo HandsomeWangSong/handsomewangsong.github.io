@@ -113,31 +113,11 @@
 
                 <ul id="nav">
 
-                    {% assign shorturl = page.url | replace:'.html','' | replace:'index','' %}
-                    {% for item in site.navigation %}
-
-                        {% assign itemshorturl = item.link | replace:'.html','' %}
-
-                        {% assign maybe-active = '' %}
-                        {% if item.title == 'Rest'  %}
-                            {% assign maybe-active = 'active' %}
-                        {% endif %}
-                        {% if itemshorturl == shorturl or is-research %}
-                            {% assign maybe-active = 'active' %}
-                        {% endif %}
-
-                        <li class="slide1"></li>
-                        <li class="slide2"></li>
-                        <li>
-                            <a  href="{{ site.base }}{{ item.link }}">
-                                {{ item.title }}
-                            </a>
-                            
-                        </li>
+                
                         <li><a href="../index.html">Home</a></li>
                         <li><a href="../research.html">Rest</a></li>
                         <li><a href="../publications.html">Publications</a></li>
-                    {% endfor %}
+                   
                 </ul>
             </div>
 
