@@ -90,8 +90,7 @@ title: Photo
             transform-origin: center;
             /* 变形原点为中心 */
         }
-
-        /* 定义内容容器样式 */
+/* 定义内容容器样式 */
         .content {
             display: flex;
             /* 设置为弹性盒子布局 */
@@ -111,7 +110,7 @@ title: Photo
             /* 保持3D变换 */
             transform: translateZ(-30vw) rotateY(0);
             /* 变换：沿z轴平移-30vw，绕y轴旋转0度 */
-            animation: carousel 9s infinite cubic-bezier(0.77, 0, 0.175, 1) forwards;
+            animation: carousel 12s infinite cubic-bezier(0.77, 0, 0.175, 1) forwards;
             /* 动画：名称为carousel，持续时间9秒，无限循环，缓动函数为cubic-bezier(0.77, 0, 0.175, 1)，动画结束后保持最后状态 */
         }
 
@@ -123,13 +122,13 @@ title: Photo
             /* 宽度占视口宽度的60% */
             height: 40vw;
             /* 高度占视口高度的40% */
-            max-width: 600px;
+            max-width: 800px;
             /* 最大宽度为380像素 */
-            max-height: 350px;
+            max-height: 500px;
             /* 最大高度为250像素 */
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
             /* 设置阴影 */
-            border-radius: 6px;
+            border-radius: 12px;
             /* 边框圆角半径为6像素 */
             background-size: cover;
             /* 背景图片等比例缩放并覆盖整个容器 */
@@ -141,7 +140,7 @@ title: Photo
         .item:nth-child(1) {
             background-image: url(../img/01.jpg);
             /* 背景图片为01.jpg */
-            transform: rotateY(0) translateZ(35vw);
+            transform: rotateY(0) translateZ(50vw);
             /* 变换：绕y轴旋转0度，沿z轴平移35vw */
         }
 
@@ -149,7 +148,7 @@ title: Photo
         .item:nth-child(2) {
             background-image: url(../img/02.jpg);
             /* 背景图片为02.jpg */
-            transform: rotateY(60deg) translateZ(35vw);
+            transform: rotateY(60deg) translateZ(50vw);
             /* 变换：绕y轴旋转120度，沿z轴平移35vw */
         }
 
@@ -157,25 +156,25 @@ title: Photo
         .item:nth-child(3) {
             background-image: url(../img/03.jpg);
             /* 背景图片为03.jpg */
-            transform: rotateY(120deg) translateZ(35vw);
+            transform: rotateY(120deg) translateZ(50vw);
             /* 变换：绕y轴旋转240度，沿z轴平移35vw */
         }
         .item:nth-child(4) {
             background-image: url(../img/04.jpg);
             /* 背景图片为03.jpg */
-            transform: rotateY(180deg) translateZ(35vw);
+            transform: rotateY(180deg) translateZ(50vw);
             /* 变换：绕y轴旋转240度，沿z轴平移35vw */
         }
         .item:nth-child(5) {
             background-image: url(../img/05.jpg);
             /* 背景图片为03.jpg */
-            transform: rotateY(240deg) translateZ(35vw);
+            transform: rotateY(240deg) translateZ(50vw);
             /* 变换：绕y轴旋转240度，沿z轴平移35vw */
         }
         .item:nth-child(6) {
             background-image: url(../img/06.jpg);
             /* 背景图片为03.jpg */
-            transform: rotateY(300deg) translateZ(35vw);
+            transform: rotateY(300deg) translateZ(50vw);
             /* 变换：绕y轴旋转240度，沿z轴平移35vw */
         }
         /* 定义动画 */
@@ -183,41 +182,41 @@ title: Photo
 
             0%,
             10% {
-                transform: translateZ(-35vw) rotateY(0);
+                transform: translateZ(-50vw) rotateY(0);
                 /* 变换：沿z轴平移-35vw，绕y轴旋转0度 */
             }
 
             15%,
             25% {
-                transform: translateZ(-35vw) rotateY(-60deg);
+                transform: translateZ(-50vw) rotateY(-60deg);
                 /* 变换：沿z轴平移-35vw，绕y轴旋转-120度 */
             }
 
             30%,
             40% {
-                transform: translateZ(-35vw) rotateY(-120deg);
+                transform: translateZ(-50vw) rotateY(-120deg);
                 /* 变换：沿z轴平移-35vw，绕y轴旋转-240度 */
             }
 
             45%,
             55% {
-                transform: translateZ(-35vw) rotateY(-180deg);
+                transform: translateZ(-50vw) rotateY(-180deg);
                 /* 变换：沿z轴平移-35vw，绕y轴旋转-360度 */
             }
 
             60%,
             70% {
-                transform: translateZ(-35vw) rotateY(-240deg);
+                transform: translateZ(-50vw) rotateY(-240deg);
                 /* 变换：沿z轴平移-35vw，绕y轴旋转-360度 */
             }
             75%,
             85% {
-                transform: translateZ(-35vw) rotateY(-300deg);
+                transform: translateZ(-50vw) rotateY(-300deg);
                 /* 变换：沿z轴平移-35vw，绕y轴旋转-360度 */
             }
             90%,
             100% {
-                transform: translateZ(-35vw) rotateY(-360deg);
+                transform: translateZ(-50vw) rotateY(-360deg);
                 /* 变换：沿z轴平移-35vw，绕y轴旋转-360度 */
             }
         }
